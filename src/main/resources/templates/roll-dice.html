@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll-Dice</title>
+</head>
+<body>
+    <h1>Dice Rolling Game</h1>
+    <h2>Choose your number!</h2>
+    <ul>
+        <li><a href="/roll-dice/1">Side 1</a></li>
+        <li><a href="/roll-dice/2">Side 2</a></li>
+        <li><a href="/roll-dice/3">Side 3</a></li>
+        <li><a href="/roll-dice/4">Side 4</a></li>
+        <li><a href="/roll-dice/5">Side 5</a></li>
+        <li><a href="/roll-dice/6">Side 6</a></li>
+    </ul>
+    <h2 th:if="${n == randomNumber}">
+        <p>You selected [[${n}]]</p>
+        <p>You were correct!</p>
+    </h2>
+    <h2 th:if="${n != randomNumber}">
+        <p>You selected [[${n}]]</p>
+        <p>You were incorrect!</p>
+    </h2>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<div th:replace="partials/head.html :: head">
+
+</div>
+<title>Post</title>
+<body>
+    <h1>Post</h1>
+    <div th:if="${post1}">
+        <h2>[[${post1.title}]]</h2>
+        <p>[[${post1.body}]]</p>
+    </div>
+</body>
+</html>

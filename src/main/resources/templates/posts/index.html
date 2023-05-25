@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="partials/head.html :: head">
+
+</div>
+<title>Spring Boot Blog</title>
+<body>
+    <div th:insert="/partials/nav.html :: nav">
+
+    </div>
+    <h1>Spring Boot Blog</h1>
+    <h2>Posts</h2>
+    <div th:if="${postList}">
+        <div th:each="post : ${postList}">
+            <h3>[[${post.title}]]</h3>
+            <p>[[${post.body}]]</p>
+        </div>
+    </div>
+</body>
+</html>
