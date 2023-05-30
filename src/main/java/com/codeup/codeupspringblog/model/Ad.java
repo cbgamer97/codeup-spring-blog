@@ -3,27 +3,25 @@ package com.codeup.codeupspringblog.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "posts")
-public class Post {
+@Table(name = "ads")
+public class Ad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(nullable = false, length = 100)
     private String title;
-    @Column(nullable = false, length = 1000)
-    private String body;
 
-    public Post(long id, String title, String body) {
+    @Column(nullable = false)
+    private String description;
+
+    public Ad(long id, String title, String description) {
         this.id = id;
         this.title = title;
-        this.body = body;
-    }
-    public Post(String title, String body) {
-        this.title = title;
-        this.body = body;
+        this.description = description;
     }
 
-    public Post() {
+    public Ad() {
     }
 
     public long getId() {
@@ -42,11 +40,11 @@ public class Post {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
