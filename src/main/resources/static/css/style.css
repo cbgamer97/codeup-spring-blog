@@ -15,10 +15,6 @@ nav .column {
     border-radius: 10px;
 }
 
-nav .column .login {
-    justify-content: flex-end;
-}
-
 /* BODY STYLING */
 
 body {
