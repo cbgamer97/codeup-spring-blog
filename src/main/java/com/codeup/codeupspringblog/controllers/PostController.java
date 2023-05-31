@@ -50,6 +50,13 @@ public class PostController {
 //        return "posts/index";
 //    }
 
+    @GetMapping("/index")
+    public String homePage(Model model){
+        List<Post> posts = postDao.findAll();
+        model.addAttribute("posts", posts);
+        return "posts/index";
+    }
+
     @GetMapping("/create")
     public String createPost(){
         return "posts/create";

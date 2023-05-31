@@ -1,12 +1,14 @@
-<nav>
+<nav th:fragment="nav">
     <div class="container shrink navbar">
         <div class="row">
-            <div class="column grow">
-                <ul>
-                    <li>Home</li>
-                    <li>Profile</li>
-                    <li>Posts</li>
-                </ul>
+            <div class="column">
+                <a href="http://localhost:8080/index"><p>Home</p></a>
+                <a href="http://localhost:8080/profile"><p>Profile</p></a>
+                <a href="http://localhost:8080/posts"><p>Posts</p></a>
+            </div>
+            <div class="column login">
+                <a href="http://localhost:8080/login"><p>Login</p></a>
+                <a href="http://localhost:8080/signup"><p>Sign Up</p></a>
             </div>
         </div>
     </div>

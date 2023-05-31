@@ -5,6 +5,9 @@
     <title>Posts</title>
 </head>
 <body>
+    <div th:insert="/partials/nav.html :: nav">
+
+    </div>
     <h1>User Posts!</h1>
     <ul>
         <li th:each="post : ${posts}">
