@@ -21,8 +21,14 @@ public class User {
     @Column(nullable = false, length = 50)
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "user")
     private List<Post> posts;
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     public User(String username, String email, String password, List<Post> posts) {
         this.username = username;
