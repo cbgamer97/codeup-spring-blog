@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-    <div th:insert="partials/head.html :: head">
-
-    </div>
-    <title>Home Page</title>
-<title>Spring Boot Blog</title>
+<head th:replace="~{partials/head.html :: head}">
+    <title>Spring Boot Blog</title>
+</head>
 <body>
-    <div th:insert="/partials/nav.html :: nav">
+<div class="page-wrapper">
+    <nav th:replace="~{/partials/nav.html :: nav}">
 
+    </nav>
+    <div class="container grow">
+        <div class="row">
+            <div class="column shrink">
+                <h1>Spring Boot Blog</h1>
+                <h2>Posts</h2>
+                <ul>
+                    <li th:each="post : ${posts}">
+                        <a th:href="@{/posts/{id}(id=${post.id})}"><h2 th:text="${post.title}"></h2></a>
+                        <p th:text="${post.body}"></p>
+                        <form th:action="@{/posts/{id}/edit(id=${post.id})}" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <h1>Spring Boot Blog</h1>
-    <h2>Posts</h2>
-    <ul>
-        <li th:each="post : ${posts}">
-            <a th:href="@{/posts/{id}(id=${post.id})}"><h2 th:text="${post.title}"></h2></a>
-            <p th:text="${post.body}"></p>
-        </li>
-    </ul>
+</div>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <div th:replace="partials/head.html :: head">
+    <div th:replace="~{partials/head.html :: head}">
     </div>
     <title>Post</title>
 </head>
 <body>
-    <div th:insert="/partials/nav.html :: nav">
+    <div th:insert="~{/partials/nav.html :: nav}">
 
     </div>
     <h1>Post</h1>

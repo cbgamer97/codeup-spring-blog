@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <div th:insert="partials/head.html :: head">
+    <div th:insert="~{partials/head.html :: head}">
     </div>
     <title>User Post</title>
 </head>
 <body>
-    <div th:insert="/partials/nav.html :: nav">
+    <div th:insert="~{/partials/nav.html :: nav}">
 
     </div>
     <div th:each="post : ${userEmail}">

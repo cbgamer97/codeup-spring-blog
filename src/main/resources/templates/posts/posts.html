@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <div th:insert="partials/head.html :: head">
+    <div th:insert="~{partials/head.html :: head}">
     </div>
     <title>Posts</title>
 </head>
 <body>
     <div class="page-wrapper">
-        <div th:insert="/partials/nav.html :: nav">
+        <div th:insert="~{/partials/nav.html :: nav}">
 
         </div>
         <div class="container grow">
