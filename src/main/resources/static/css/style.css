@@ -1,18 +1,32 @@
 /* NAV BAR */
 
+.home-button{
+    justify-content: flex-start;
+}
+
+.login-button{
+    justify-content: flex-end;
+}
+
 nav .column {
     flex-direction: row;
     gap: 20px;
+    justify-content: inherit;
 }
 
 .navbar {
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
     height: 40px;
-    background-color: #989292;
+    background-color: #4c6791;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+}
+
+.nav-link {
+    color: #fff;
 }
 
 /* BODY STYLING */
@@ -28,8 +42,12 @@ body {
 
 /* CREATE PAGE STYLING*/
 
-input {
+input, textarea {
     margin-bottom: 10px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    border-color: #4c6791;
+    color: #4c6791;
 }
 
 .post_title {
@@ -45,4 +63,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
+    background-color: #4c6791;
+    color: white;
 }

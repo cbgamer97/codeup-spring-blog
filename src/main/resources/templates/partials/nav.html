@@ -1,14 +1,16 @@
 <nav th:fragment="nav">
-    <div class="container shrink navbar">
-        <div class="row">
-            <div class="column">
-                <a href="http://localhost:8080/index"><p>Home</p></a>
-                <a href="http://localhost:8080/profile"><p>Profile</p></a>
-                <a href="http://localhost:8080/posts"><p>Posts</p></a>
+    <div class="container grow navbar">
+        <div class="row home-button">
+            <div class="column shrink">
+                <a class="nav-link" th:href="@{http://localhost:8080/index}"><p>Home</p></a>
+                <a class="nav-link" th:href="@{http://localhost:8080/profile}"><p>Profile</p></a>
+                <a class="nav-link" th:href="@{http://localhost:8080/posts}"><p>Posts</p></a>
             </div>
-            <div class="column login">
-                <a href="http://localhost:8080/login"><p>Login</p></a>
-                <a href="http://localhost:8080/signup"><p>Sign Up</p></a>
+        </div>
+        <div class="row login-button">
+            <div class="column login shrink">
+                <a class="nav-link" th:href="@{http://localhost:8080/login}"><p>Login</p></a>
+                <a class="nav-link" th:href="@{http://localhost:8080/signup}"><p>Sign Up</p></a>
             </div>
         </div>
     </div>
