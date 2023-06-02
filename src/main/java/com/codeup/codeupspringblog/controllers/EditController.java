@@ -14,29 +14,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class EditController {
 
-    private final PostRepository postDao;
+    private final PostRepository postsDao;
     private final UserRepository usersDao;
 
-    public EditController(PostRepository postDao, UserRepository usersDao) {
-        this.postDao = postDao;
+    public EditController(PostRepository postsDao, UserRepository usersDao) {
+        this.postsDao = postsDao;
         this.usersDao = usersDao;
     }
 
 
     @GetMapping("/posts/{id}/edit")
-    public String editPost(@PathVariable long id, Model model){
-        User user = usersDao.getOne(1L);
-        Post post = postDao.findById(id);
+    public String editForm(@PathVariable long id, Model model) {
+        Post post = postsDao.findById(id);
         model.addAttribute("post", post);
         return "posts/create";
     }
 
     @PostMapping("/posts/{id}/edit")
-    public String submitForm(@PathVariable long id, @ModelAttribute Post post){
-        User user = usersDao.getOne(1L);
-        postDao.findById(id);
+    public String submitEditForm(@PathVariable long id, @ModelAttribute Post post) {
+        User user = usersDao.findUserById(1L);
         post.setUser(user);
-        postDao.save(post);
+        post.setId(id);
+        postsDao.save(post);
         return "redirect:/index";
     }
 }

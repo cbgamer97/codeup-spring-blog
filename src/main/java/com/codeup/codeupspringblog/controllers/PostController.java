@@ -14,10 +14,12 @@ public class PostController {
 
     private final PostRepository postDao;
     private final UserRepository usersDao;
+    private final EmailService emailService;
 
-    public PostController(PostRepository postDao, UserRepository usersDao) {
+    public PostController(PostRepository postDao, UserRepository usersDao, EmailService emailService) {
         this.postDao = postDao;
         this.usersDao = usersDao;
+        this.emailService = emailService;
     }
 
     @GetMapping("/index")
@@ -25,6 +27,13 @@ public class PostController {
         List<Post> posts = postDao.findAll();
         model.addAttribute("posts", posts);
         return "posts/index";
+    }
+
+    @GetMapping("/posts/{id}")
+    public String showPost(@PathVariable long id, Model model){
+        Post post = postDao.findById(id);
+        model.addAttribute("post", post);
+        return "posts/show";
     }
 
     @GetMapping("/create")
@@ -38,6 +47,7 @@ public class PostController {
         User user = usersDao.findUserById(1L);
         post.setUser(user);
         postDao.save(post);
-        return "redirect:/posts";
+        emailService.prepareAndSend(post, "New Post: " + post.getTitle(), "You have created a new post! Here it is: " + post.getBody());
+        return "redirect:/index";
     }
 }
