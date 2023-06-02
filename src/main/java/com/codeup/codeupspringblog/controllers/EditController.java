@@ -25,14 +25,17 @@ public class EditController {
 
     @GetMapping("/posts/{id}/edit")
     public String editPost(@PathVariable long id, Model model){
+        User user = usersDao.getOne(1L);
         Post post = postDao.findById(id);
         model.addAttribute("post", post);
-        return "posts/edit";
+        return "posts/create";
     }
 
     @PostMapping("/posts/{id}/edit")
     public String submitForm(@PathVariable long id, @ModelAttribute Post post){
+        User user = usersDao.getOne(1L);
         postDao.findById(id);
+        post.setUser(user);
         postDao.save(post);
         return "redirect:/index";
     }
