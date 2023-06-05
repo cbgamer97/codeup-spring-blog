@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <div th:insert="~{partials/head.html :: head}">
-    </div>
-    <title>Posts</title>
-</head>
+<head th:replace="~{partials/head.html :: head ('View Post')}"></head>
 <body>
     <div class="page-wrapper">
-        <div th:insert="~{/partials/nav.html :: nav}">
+        <nav th:insert="~{/partials/nav.html :: nav}">
 
-        </div>
-        <div class="container grow">
-            <div class="row">
-                <div class="column shrink">
-                    <h1>User Posts!</h1>
-                    <ul>
-                        <li th:each="post : ${posts}">
-                            <a th:href="@{/posts/{id}(id=${post.id})}"><h2 th:text="${post.title}"></h2></a>
-                            <p th:text="${post.body}"></p>
-                            <p th:text="${post.user.email}"></p>
-                        </li>
-                    </ul>
+        </nav>
+        <div class="container justify-center grow">
+            <div class="row justify-center">
+                <div class="container shrink">
+                    <h1>Post</h1>
+                    <div>
+                        <h2 th:text="${post.title}"></h2>
+                        <p th:text="${post.body}"></p>
+                    </div>
                 </div>
             </div>
         </div>

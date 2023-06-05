@@ -1,34 +1,3 @@
-/* NAV BAR */
-
-.home-button{
-    justify-content: flex-start;
-}
-
-.login-button{
-    justify-content: flex-end;
-}
-
-nav .column {
-    flex-direction: row;
-    gap: 20px;
-    justify-content: inherit;
-}
-
-.navbar {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    height: 40px;
-    background-color: #4c6791;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-}
-
-.nav-link {
-    color: #fff;
-}
-
 /* BODY STYLING */
 
 body {
@@ -70,4 +39,46 @@ button {
     border: none;
     background-color: #4c6791;
     color: white;
+}
+
+/* NAV BAR */
+
+.home-button{
+    justify-content: flex-start;
+}
+
+.login-button{
+    justify-content: flex-end;
+}
+
+nav .column {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: inherit;
+}
+
+.navbar {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    background-color: #4c6791;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+nav form {
+    display: flex;
+    align-items: center;
+}
+
+.logoutButton {
+    box-shadow: unset;
+    padding: unset;
+    font-family: 'Roboto', sans-serif;
 }

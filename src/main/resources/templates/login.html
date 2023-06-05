@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{partials/head.html :: head ('Login')}"></head>
+<body>
+    <div class="page-wrapper">
+        <nav th:replace="~{partials/nav.html :: nav}">
+
+        </nav>
+        <div class="container grow justify-center">
+            <div class="row justify-center">
+                <div class="column shrink">
+                    <h1>Login</h1>
+                    <form  th:method="post"
+                           th:action="@{/login}">
+                        <label for="username">Username:</label>
+                        <input type="text" placeholder="Enter Username" id="username" name="username" class="username_input"><br>
+                        <label for="password">Password:</label>
+                        <input type="password" placeholder="Enter Password" id="password" name="password" class="password_input"><br>
+                        <button type="submit" value="Submit">Login</button>
+                    </form>
+                    <p th:text="${param.error}" class="error">${param.error}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

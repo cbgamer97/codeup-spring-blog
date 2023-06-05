@@ -4,6 +4,7 @@ import com.codeup.codeupspringblog.model.Post;
 import com.codeup.codeupspringblog.model.User;
 import com.codeup.codeupspringblog.repositories.PostRepository;
 import com.codeup.codeupspringblog.repositories.UserRepository;
+import com.codeup.codeupspringblog.services.EmailService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,7 @@ public class PostController {
     public String showPost(@PathVariable long id, Model model){
         Post post = postDao.findById(id);
         model.addAttribute("post", post);
-        return "posts/show";
+        return "posts/posts";
     }
 
     @GetMapping("/create")

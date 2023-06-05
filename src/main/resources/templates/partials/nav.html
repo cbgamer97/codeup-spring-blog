@@ -10,7 +10,10 @@
         <div class="row login-button">
             <div class="column login shrink">
                 <a class="nav-link" th:href="@{http://localhost:8080/login}"><p>Login</p></a>
-                <a class="nav-link" th:href="@{http://localhost:8080/signup}"><p>Sign Up</p></a>
+                <a class="nav-link" th:href="@{http://localhost:8080/register}"><p>Sign Up</p></a>
+                <form th:method="post" th:action="@{/logout}">
+                    <button type="submit" class="logoutButton">Logout</button>
+                </form>
             </div>
         </div>
     </div>
